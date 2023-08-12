@@ -1,0 +1,39 @@
+@use 'var';
+
+.posters {
+    padding: 2.6vw 5.6vw 6vw;
+    background-color: var.$color-licorice;
+
+    h3 {
+        color: var.$color-selective-yellow;
+    }
+    
+    p {
+        color: var.$color-selective-yellow;
+    }
+
+    @media (max-width: 768px) {
+        padding-bottom: 14vw;
+    }
+
+    &__content {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 16px;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+
+        &__item {
+            img {
+                width: 100%;
+
+                @media (max-width: 768px) {
+                    margin-top: 8px;
+                }
+            }
+        }
+    }
+}

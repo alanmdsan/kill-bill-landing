@@ -1,0 +1,149 @@
+@use 'reset';
+@use 'var';
+@use 'hero';
+@use 'synopsis';
+@use 'references';
+@use 'posters';
+
+body {
+    background-color: var.$color-white;
+}
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.nav-container {
+    background-color: var.$color-selective-yellow;
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 32px;
+    
+    @media (max-width: 768px) {
+        justify-content: center;
+        padding-right: 0;
+    }
+}
+
+.nav-links {
+    &__content {
+        display: flex;
+        align-items: center;
+
+        &__item {
+            margin-left: 24px;
+            
+            a {
+                font-family: var.$font-bebas-neue;
+                font-size: 28px;
+                text-decoration: none;
+                color: var.$color-engineering-orange;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.scroll-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 1;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.scroll-btn-image {
+    display: none;
+    width: 40px;
+}
+
+@mixin title() {
+    font-family: var.$font-bebas-neue;
+    text-transform: uppercase;
+    color: var.$color-licorice;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @include title;
+}
+
+h1 {
+    font-size: 96px;
+    line-height: 80px;
+}
+
+h2 {
+    font-size: 72px;
+    line-height: 66px;
+}
+
+h3 {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+p {
+    padding: 16px 40px;
+    font-family: var.$font-outfit;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: var.$color-licorice;
+}
+
+.quote {
+    padding: 16px 64px;
+    font-style: italic;
+    color: var.$color-syracuse-red-orange;
+
+    &:before {
+        content: '"';
+        font-size: 40px;
+        color: var.$color-engineering-orange;
+    }
+}
+
+.text--red {
+    color: var.$color-engineering-orange;
+}
+
+.reference-link {
+    margin-top: 16px;
+    font-family: var.$font-bebas-neue;
+    text-decoration: none;
+    color: var.$color-engineering-orange;
+    font-size: 16px;
+    float: right;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.divider--red {
+    background-color: var.$color-engineering-orange;
+    width: 100%;
+    height: 40px;
+}
+
+.divider--yellow {
+    background-color: var.$color-selective-yellow;
+    width: 100%;
+    height: 40px;
+}
